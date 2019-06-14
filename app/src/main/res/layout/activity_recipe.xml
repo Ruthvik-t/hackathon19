@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".RecipeActivity"
+                tools:deviceIds="tv"
+                tools:ignore="MergeRootFrame"
+                android:keepScreenOn="true">
+
+    <com.google.android.exoplayer2.ui.PlayerView android:layout_width="720dp" android:layout_height="match_parent"
+                                                 android:layout_alignParentStart="true"
+                                                 android:layout_alignParentTop="true"
+                                                 android:id="@+id/video_view"/>
+
+    <ViewFlipper android:layout_width="match_parent" android:layout_height="wrap_content"
+                 android:layout_toRightOf="@id/video_view"
+                 android:id="@+id/product_view_flipper">
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="300dp"
+                  android:textSize="18sp"
+                  android:layout_marginVertical="16dp"
+                  android:paddingHorizontal="12dp"
+                  android:gravity="center"
+                  android:background="#FFF"
+                  android:textColor="#00539F"
+                  android:text="Homemade Fish Fingers With Chip Butty\n\nBy Gordon Ramsay"/>
+
+        <androidx.viewpager.widget.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginVertical="16dp"
+                android:id="@+id/product_carousel"/>
+    </ViewFlipper>
+
+    <FrameLayout android:layout_width="wrap_content"
+                 android:layout_height="240dp"
+                 android:layout_toRightOf="@id/video_view"
+                 android:layout_below="@+id/product_view_flipper">
+
+        <ImageView android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:gravity="center"
+                   android:src="@drawable/qrcode"/>
+
+    </FrameLayout>
+
+</RelativeLayout>
